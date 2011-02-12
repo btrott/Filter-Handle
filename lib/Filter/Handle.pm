@@ -38,8 +38,14 @@ sub TIEHANDLE {
 
 sub PRINT {
     my $self = shift;
-    my $fh = *{ $self->{fh} };
-    print $fh $self->{output}->(@_);
+    if ($] < 5.008) {
+        my $fh = *{ $self->{fh} };
+        print $fh $self->{output}->(@_);
+    } else {
+        open my $fh, ">&", \*{ $self->{fh} }; 
+        print $fh $self->{output}->(@_);
+        close $fh;
+    }
 }
 
 sub PRINTF {

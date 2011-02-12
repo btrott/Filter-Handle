@@ -1,6 +1,7 @@
 Revision history for Perl extension Filter::Handle.
 
 0.04  2011.02.11
+    - Fixed segfault in Perl > 5.8. (RT 1485)
     - Cleaned up Makefile.PL.
     - Removed magic svn keywords.
     - Claned up tests; now using Test::More.
