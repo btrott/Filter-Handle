@@ -1,7 +1,14 @@
 Revision history for Perl extension Filter::Handle.
 
-0.01  Thu Aug 17 19:34:18 2000
-	- original version; created by h2xs 1.19
+0.04  2011.02.11
+    - Cleaned up Makefile.PL.
+    - Removed magic svn keywords.
+    - Claned up tests; now using Test::More.
+    - Added author tests (xt/) and modified SYNOPSIS for all modules to
+      make them pass the compilation test.
+
+0.03  Sat Aug 19 12:12:01 2000
+	- added README
 
 0.02  Fri Aug 18 9:15:12 2000
 	- changed OO interface; now must explicitly call
@@ -10,6 +17,5 @@ Revision history for Perl extension Filter::Handle.
 	  test string to STDOUT
 	- added tips, tricks, samples (to be expanded)
 
-
-0.03  Sat Aug 19 12:12:01 2000
-	- added README
+0.01  Thu Aug 17 19:34:18 2000
+	- original version; created by h2xs 1.19

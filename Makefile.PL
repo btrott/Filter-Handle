@@ -1,7 +1,12 @@
-use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-WriteMakefile(
-    'NAME'	=> 'Filter::Handle',
-    'VERSION_FROM' => 'Handle.pm', # finds $VERSION
-);
+use inc::Module::Install;
+name 'Filter-Handle';
+all_from 'lib/Filter/Handle.pm';
+readme_from 'lib/Filter/Handle.pm';
+
+test_requires 'Test::More';
+
+use_test_base;
+auto_include_deps;
+author_tests('xt');
+auto_set_repository;
+WriteAll;

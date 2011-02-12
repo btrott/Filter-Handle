@@ -1,8 +1,8 @@
 package Filter::Handle;
 use strict;
+use 5.008_001;
 
-use vars qw/$VERSION/;
-$VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub import {
     my $class  = shift;
@@ -61,15 +61,15 @@ Filter::Handle - Apply filters to output filehandles
 
     use Filter::Handle;
     my $f = Filter::Handle->new(\*STDOUT);
-    $f->print(...);
+    $f->print("foo");
 
     use Filter::Handle qw/subs/;
     Filter \*STDOUT;
-    ...
+    # ...
     UnFilter \*STDOUT;
 
     tie *STDOUT, 'Filter::Handle', \*HANDLE;
-    ...
+    # ...
     untie *STDOUT;
 
 =head1 DESCRIPTION
@@ -231,14 +231,15 @@ Note that this won't work correctly with output from
 XSUBs or system calls. This is due to a limitation of
 Perl's I<tie> mechanism when tying filehandles.
 
-=head1 AUTHOR
+=head1 LICENSE
 
-Benjamin Trott, ben@rhumba.pair.com
+I<Data::ConveyorBelt> is free software; you may redistribute it and/or
+modify it under the same terms as Perl itself.
 
-=head1 CREDITS
+=head1 AUTHOR & COPYRIGHT
 
-Thanks to tilly, chromatic, and merlyn at PerlMonks.org
-for suggestions, critiques, and code samples.
+Except where otherwise noted, I<Filter::Handle> is Copyright 2011
+Benjamin Trott, cpan@stupidfool.org.
 
 =cut
 
