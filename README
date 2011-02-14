@@ -4,18 +4,22 @@ NAME
 SYNOPSIS
         use Filter::Handle;
         my $f = Filter::Handle->new(\*STDOUT);
-        $f->print(...);
+        $f->print("foo");
 
         use Filter::Handle qw/subs/;
         Filter \*STDOUT;
-        ...
+        # ...
         UnFilter \*STDOUT;
 
         tie *STDOUT, 'Filter::Handle', \*HANDLE;
-        ...
+        # ...
         untie *STDOUT;
 
 DESCRIPTION
+    NOTE: Filter::Handle is now deprecated and is no longer on CPAN. The
+    feature implemented here can be implemented in modern Perl (5.8+) using
+    *PerlIO::via*.
+
     *Filter::Handle* allows you to apply arbitrary filters to output
     filehandles. You can perform any sorts of transformations on the
     outgoing text: you can prepend it with some data, you can replace all

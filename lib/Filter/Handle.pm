@@ -80,6 +80,10 @@ Filter::Handle - Apply filters to output filehandles
 
 =head1 DESCRIPTION
 
+B<NOTE:> Filter::Handle is now deprecated and is no longer on CPAN. The
+feature implemented here can be implemented in modern Perl (5.8+) using
+I<PerlIO::via>.
+
 I<Filter::Handle> allows you to apply arbitrary filters
 to output filehandles. You can perform any sorts of
 transformations on the outgoing text: you can prepend it
